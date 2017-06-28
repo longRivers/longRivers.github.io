@@ -27,8 +27,8 @@
   <meta name="360-fullscreen" content="true"/>
   
   <!-- force screen orientation on some browser -->
-  <meta name="screen-orientation" content=""/>
-  <meta name="x5-orientation" content="">
+  <meta name="screen-orientation" content="landscape"/>
+  <meta name="x5-orientation" content="landscape">
 
   <!--fix fireball/issues/3568 -->
   <!--<meta name="browsermode" content="application">-->
@@ -49,6 +49,17 @@
   </div>
 <script src="src/settings.js" charset="utf-8"></script>
 <script src="main.js" charset="utf-8"></script>
+
+<script charset="utf-8" id="protocols" type="text/javascript">
+  var protocols = document.createElement("script");
+  protocols.onload = function () {
+    anysdk.agentManager.init();
+    anysdk.agentManager.loadAllPlugins(function (code, msg) {
+    });
+  };
+  protocols.src = "http://statics.h5.anysdk.com/protocols/protocols.js";
+  document.body.appendChild(protocols);
+</script>
 
 </body>
 </html>
