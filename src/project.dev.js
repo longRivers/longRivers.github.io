@@ -194,7 +194,7 @@ cc.Class({
         this.boshuLab.string = this.boshu;
 
         //每杀死一个敌人获得金币数
-        this.getCoin = 50;
+        this.getCoin = 60;
         //开启音效
         this.musicFlag = 1;
         //解锁第一个buff的分数
@@ -372,10 +372,10 @@ cc.Class({
         //每波切换怪物种类
         this.enemyType = 3 - this.enemyType;
         var tempAttackNum = this.perAttackNum;
-        if (this.getCoin <= 100) {
+        if (this.getCoin <= 110) {
             this.getCoin += 5;
         }
-        if (this.enemyBlood <= 30) {
+        if (this.enemyBlood <= 27) {
             this.enemyBlood += 3;
         }
         if (this.enemySpeed <= 200) {
@@ -960,7 +960,7 @@ cc.Class({
                         this.node.color = cc.color(255, 255, 255);
                         this.speed = B.game.enemySpeed;
                     }, 7);
-                    this.speed = this.speed * 0.8;
+                    this.speed = this.speed * 0.7;
                     this.hurt(other.getComponent("bullet").power);
                     break;
                 case 7:
